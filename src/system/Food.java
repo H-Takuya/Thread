@@ -4,13 +4,11 @@ package system;
  * Created by ruth on 2016/11/18.
  */
 public class Food {
-    private String name;
+    String name = "食べ物";
     public String toString(){
-
         return name;
     }
-    Food(String name)
-    {
+    public void Food(String name) {
         this.name = name;
     }
 }
