@@ -6,31 +6,33 @@ import java.util.ArrayList;
  * Created by ruth on 2016/11/18.
  */
 
-public class Fridge extends Thread {
+public class Fridge  {
     static ArrayList<Food> list = new ArrayList<>();
+    //private int totalFood = Integer.parseInt( null );
 
-    //入れる処理
-     public putFood(Food food) {
-            while (list.size() != 0) {
-                try{
-                    wait();
-                    list.add( food );
-                    System.out.println( food + "を冷蔵庫に入れました" );
-                }catch (InterruptedException e){
-                    e.printStackTrace();
-                }
+    Food food = new Food();
+    public Fridge(){
 
-            }
+
 
     }
+    //入れる処理
+     public synchronized void putFood(Food food) {
+                     list.add( this.food );
+                     System.out.println( "お母さんが"+food+"を冷蔵庫に入れました" );
+
+             }
+
+
 
 
 
     //取り出す処理
-    public synchronized void getFood(){
+    public synchronized void getFood(int n){
+
 
         if (0 != list.size()){
-            list.get(0);
+            list.get(n);
             }else {
             System.out.println("冷蔵庫は空っぽです");
         }
@@ -38,6 +40,4 @@ public class Fridge extends Thread {
 
     }
 
-    public void putFood() {
-    }
 }

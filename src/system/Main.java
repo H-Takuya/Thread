@@ -6,20 +6,17 @@ package system;
 public class Main {
     public static void main (String[]args) throws InterruptedException {
         Food food = new Food();
-        Fridge fridge =new Fridge();  //Fridgeは１回しかインスタンス化できない
+        Fridge fridge =new Fridge();   //Fridgeは１回しかインスタンス化できない
 
-        Curry curry = new Curry();
-        //Soup soup =new Soup();
-        //Sushi sushi = new Sushi();
-
-        food.name="カレー";
         Mom mom = new Mom(food,fridge);
-
-        //mom.cook( curry );
+        food.name="カレー";
+        mom.cook( food );
+        food.name= "スープ";
+        mom.cook( food );
+        food.name= "寿司";
 
         mom.start();
-        //mom.cook( soup );
-        //mom.cook( sushi );
+
 
         try {
             mom.join();
@@ -28,15 +25,14 @@ public class Main {
         }
 
         fridge.putFood(food);
-        //fridge.putFood(soup);
-        //fridge.putFood(sushi);
 
-        Child child1 = new Child(fridge);
+
+        Child child1 = new Child(food,fridge);
+        Child child2 = new Child( food,fridge );
+        Child child3 = new Child( food,fridge );
         child1.start();
-
-        //Child child2 = new Child("アキラ",fridge);
-        //Child child3 = new Child("タカシ",fridge);
-
+        child2.start();
+        child3.start();
 
         try {
             child1.join();

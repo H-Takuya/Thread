@@ -8,20 +8,20 @@ import system.*;
  * Created by ruth on 2016/11/18.
  */
 class Child extends Thread {
-    private int Dish;
-    private String name = null;
+
+    private  Food food = null;
     private Fridge fridge = null;
 
 
 
-    public  Child(Fridge fridge) {
+    public  Child (Food food, Fridge fridge) {
+        this.food = food;
         this.fridge = fridge;
     }
 
     public void run(){
-        Food food;
-        this.fridge.getFood();
-     //   System.out.println( this.name + "が" + list.get( 0 ) + "を出して食べました" );
+        this.fridge.getFood(0);
+        System.out.println( "子供が" +food + "を出して食べました" );
     }
 
 

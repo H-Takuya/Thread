@@ -4,7 +4,7 @@ package system;
  * Created by ruth on 2016/11/18.
  */
  class Mom extends Thread{
-    static int Didh = 3;
+
     private Fridge fridge = null;
     private Food food = null;
 
@@ -15,9 +15,11 @@ package system;
     }
 
     public void cook(Food food){
+
         System.out.println("お母さんが"+food+"を作りました");
     }
-    void run(){
+    public void run(){
+
         this.fridge.putFood(food);
     }
 
