@@ -11,33 +11,25 @@ public class Fridge  {
     //private int totalFood = Integer.parseInt( null );
 
     Food food = new Food();
-    public Fridge(){
-
-
+    public Fridge() {
 
     }
     //入れる処理
-     public synchronized void putFood(Food food) {
-                     list.add( this.food );
-                     System.out.println( "お母さんが"+food+"を冷蔵庫に入れました" );
-
-             }
-
-
-
-
-
-    //取り出す処理
-    public synchronized void getFood(int n){
-
-
-        if (0 != list.size()){
-            list.get(n);
-            }else {
-            System.out.println("冷蔵庫は空っぽです");
-        }
-
-
+    public synchronized void putFood (Food food){
+        list.add( this.food );
+        System.out.println( "お母さんが" + food + "を冷蔵庫に入れました" );
     }
-
+            //取り出す処理
+    public synchronized void getFood ( int n){
+            if (0 != list.size()) {
+                list.get( n );
+            } else {
+                System.out.println( "冷蔵庫は空っぽです" );
+            }
+    }
 }
+
+
+
+
+
