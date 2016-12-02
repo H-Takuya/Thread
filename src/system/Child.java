@@ -21,7 +21,7 @@ class Child extends Thread {
 
     public void run(){
         fridge.getFood(0);
-        System.out.println( "子供が" +food + "を出して食べました" );
+        System.out.println( "子供が" +food+ "を出して食べました" );
     }
 
 

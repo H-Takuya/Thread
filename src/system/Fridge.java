@@ -13,18 +13,20 @@ public class Fridge  {
     Food food = new Food();
 
     //入れる処理
-    public synchronized void putFood (Food food){
+    synchronized void putFood (Food food){
         list.add( food );
         System.out.println( "お母さんが" + food + "を冷蔵庫に入れました" );
     }
-            //取り出す処理
-    public synchronized void getFood (int n){
+
+    //取り出す処理
+    synchronized void getFood (int n){
             if (0 != list.size()) {
                 try {
                     Thread.sleep((long) (Math.random() * 400)); //平均2秒(4秒以下のランダムな時間)
                 } catch (InterruptedException e) {
                 }
                 list.get(n);
+
                 list.remove(n);
             } else {
                 System.out.println( "冷蔵庫は空っぽです" );
