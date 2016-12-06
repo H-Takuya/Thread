@@ -4,7 +4,9 @@
 
     package system;
 
-    /**
+import java.io.FileReader;
+
+/**
      *
      * 子供クラス
      * 食べ物を食べる
@@ -27,12 +29,12 @@
         }
 
         public void run(){
-            while (hungry) {
-                System.out.print(name);
-                fridge.GetFood();
 
+            while (hungry) {
+
+                fridge.GetFood(name);
             }
-            }
+        }
 
         public void over(){
             hungry = false;

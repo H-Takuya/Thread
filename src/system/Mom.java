@@ -4,7 +4,6 @@ package system;
  * Created by ruth on 2016/12/05.
  /
  package jp.system;
-
  /**
  *
  * 母親クラス
