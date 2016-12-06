@@ -1,40 +1,40 @@
+/**
+ * Created by ruth on 2016/12/05.
+ */
 package system;
+
 
 import java.util.ArrayList;
 
 /**
- * Created by ruth on 2016/11/18.
+ *
+ * 冷蔵庫クラス
+ * 食べ物を出し入れする
+ *
  */
+class Fridge {
+    ArrayList<Food> list = new ArrayList<Food>();
+    //Food food = new Food();
 
-public class Fridge  {
-    static ArrayList<Food> list = new ArrayList<>();
-    //private int totalFood = Integer.parseInt( null );
-
-    Food food = new Food();
-
-    //入れる処理
-    synchronized void putFood (Food food){
-        list.add( food );
-        System.out.println( "お母さんが" + food + "を冷蔵庫に入れました" );
+    // TODO 食べ物を入れる実装
+    public synchronized void PutFood(Food food){
+        list.add(food);
+        System.out.println(food +"を冷蔵庫に入れました");
     }
 
-    //取り出す処理
-    synchronized void getFood (int n){
-            if (0 != list.size()) {
-                try {
-                    Thread.sleep((long) (Math.random() * 400)); //平均2秒(4秒以下のランダムな時間)
-                } catch (InterruptedException e) {
-                }
-                list.get(n);
+    // TODO 食べ物を取り出す実装
+    synchronized void GetFood() {
+        if (list.size() != 0) {
 
-                list.remove(n);
-            } else {
-                System.out.println( "冷蔵庫は空っぽです" );
-            }
+            list.get(0);
+            System.out.println("が"+list.get(0)+"を食べました");
+            list.remove(0);
+
+        }else {
+            System.out.println("が冷蔵庫を開けましたが冷蔵庫はからです");
+        }
     }
+
+
+
 }
-
-
-
-
-

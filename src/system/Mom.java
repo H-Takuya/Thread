@@ -1,26 +1,26 @@
 package system;
 
 /**
- * Created by ruth on 2016/11/18.
+ * Created by ruth on 2016/12/05.
+ /
+ package jp.system;
+
+ /**
+ *
+ * 母親クラス
+ * 食べ物を作る
+ *
  */
- class Mom {
-
+class Mom {
     Food food = new Food();
-    private Fridge fridge;
 
-    public Mom(Food food,Fridge fridge){
-        this.fridge = fridge;
+    public Mom(Food food) {
         this.food = food;
     }
 
-
-    public void cook(Food food) {
-        System.out.println(food+"を作りました");
-        this.fridge.putFood(this.food);
+    // TODO 料理を作る
+    public void cook(Food food){
+        this.food = food;
+        System.out.println("お母さんが"+food+"を作りました");
     }
 }
-
-
-
-
-

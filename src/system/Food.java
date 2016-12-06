@@ -1,15 +1,24 @@
+/**
+ * Created by ruth on 2016/12/05.
+ */
 package system;
 
 /**
- * Created by ruth on 2016/11/18.
+ *
+ * 食べ物クラス
+ *
  */
-public class Food {
+class Food {
     String name = "食べ物";
-    public String toString(){
+
+
+
+    public String toString() {
         return name;
     }
-    public void Food(String name) {
 
+    public void Food(String name) {
         this.name = name;
     }
+
 }

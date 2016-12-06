@@ -1,32 +1,44 @@
-package system;
-import system.*;
-
-
-
-
 /**
- * Created by ruth on 2016/11/18.
+ * Created by ruth on 2016/12/05.
  */
-class Child extends Thread {
 
-    private  Food food = null;
-    private Fridge fridge = null;
+    package system;
 
+    /**
+     *
+     * 子供クラス
+     * 食べ物を食べる
+     *
+     * @author higa_takuya
+     *
+     */
 
+    class Child extends Thread{
+        private String name;
+        Food food = new Food();
+        private Fridge fridge;
+        private boolean hungry = true;
 
-    public  Child (Food food, Fridge fridge) {
-        this.food = food;
-        this.fridge = fridge;
+        public Child(String name, Food food, Fridge fridge){
+            this.name = name;
+            this.food = food;
+            this.fridge = fridge;
+
+        }
+
+        public void run(){
+            while (hungry) {
+                System.out.print(name);
+                fridge.GetFood();
+
+            }
+            }
+
+        public void over(){
+            hungry = false;
+        }
+
     }
-
-    public void run(){
-        fridge.getFood(0);
-        System.out.println( "子供が" +food+ "を出して食べました" );
-    }
-
-
-
-}
 
 
 
