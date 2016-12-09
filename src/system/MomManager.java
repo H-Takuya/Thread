@@ -18,9 +18,9 @@ class MomManager extends Thread{
         Food food3 = new Food();
         Food food4 = new Food();
 
-        food1.name="カレー";
-        mom.cook(food1);
-        fridge.PutFood(food1);
+       food1.name="カレー";
+       mom.cook(food1);
+       fridge.PutFood(food1);
 
         food2.name= "シチュー";
         mom.cook(food2);

@@ -25,14 +25,22 @@ class Fridge {
     // TODO 食べ物を取り出す実装
     synchronized void GetFood(String name) {
         if (list.size() != 0) {
+            /*
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
 
+            */
             list.get(0);
-            System.out.println(name+"が"+list.get(0)+"を食べました");
+            System.out.println(name+"が冷蔵庫を開けて"+list.get(0)+"を食べました");
             list.remove(0);
-
-        }else {
+        } else {
            System.out.println(name+"が冷蔵庫を開けましたが冷蔵庫はからです");
         }
+
+        notifyAll();
     }
 
 

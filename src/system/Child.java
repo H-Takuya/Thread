@@ -29,15 +29,22 @@ import java.io.FileReader;
         }
 
         public void run(){
-
             while (hungry) {
+            fridge.GetFood(name);
+        try{
+            Thread.sleep((long)(Math.random() * 40));
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
 
-                fridge.GetFood(name);
+
             }
         }
 
         public void over(){
-            hungry = false;
+                hungry = false;
+
+
         }
 
     }
