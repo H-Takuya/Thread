@@ -15,13 +15,11 @@ class Food {
 
 
     public String toString() {
-
         return name;
     }
 
     public void Food(String name) {
         this.name = name;
     }
-
 
 }

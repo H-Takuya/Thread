@@ -6,7 +6,7 @@
 
 import java.io.FileReader;
 
-    /**
+/**
      *
      * 子供クラス
      * 食べ物を食べる
@@ -32,7 +32,7 @@ import java.io.FileReader;
             while (hungry) {
             fridge.GetFood(name);
         try{
-            Thread.sleep((long)(Math.random() * 40));
+            Thread.sleep((long)(Math.random() * 20));
         }catch (InterruptedException e){
             e.printStackTrace();
         }
@@ -42,6 +42,7 @@ import java.io.FileReader;
         }
 
         public void over(){
+
                 hungry = false;
 
 
