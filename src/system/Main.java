@@ -36,9 +36,6 @@ public class Main {
         Child child2 = new Child("拳王",food,fridge);
         Child child3 = new Child("ケンシロウ",food,fridge);
 
-
-
-
         momManager.start();
         child1.start();
         child2.start();

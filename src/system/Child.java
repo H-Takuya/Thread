@@ -6,7 +6,7 @@
 
 import java.io.FileReader;
 
-/**
+    /**
      *
      * 子供クラス
      * 食べ物を食べる
